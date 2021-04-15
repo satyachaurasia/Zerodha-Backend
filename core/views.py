@@ -28,6 +28,10 @@ r = redis.Redis(host='localhost', port=6379, db=2)
 @api_view(('GET',))
 @permission_classes([AllowAny,])
 def get_records(request):
+    '''
+    Takes date and the search query 
+    Returns List of records 
+    '''
     q = request.GET.get('q', '')
     date = request.GET.get('date', '')
     query_list = []
@@ -56,6 +60,11 @@ def iter_items(date, q, pseudo_buffer):
 @api_view(('GET',))
 @permission_classes([AllowAny,])
 def download_csv(request):
+    '''
+    Takes date and the search query 
+    Returns CSV contaning records filtered from redis DB
+    '''
+
     q = request.GET.get('q', '')
     date = request.GET.get('date', '')
 

@@ -17,7 +17,7 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'csv-parsing': {
         'task': 'core.tasks.process_csv',
-        'schedule': crontab(minute = 0, hour = 20, day_of_week = '1-5'),
+        'schedule': crontab(minute = '*/1', day_of_week = '1-5'),
     },
 }
 app.conf.timezone = 'Asia/Kolkata'

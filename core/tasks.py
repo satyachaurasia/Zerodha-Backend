@@ -16,6 +16,10 @@ from celery.decorators import task
 
 @task
 def process_csv(tried_once = False):
+    '''
+        Runs every weekday at 8 PM 
+        Makes a get request to BSE to fetch CSV File, then stores the data from CSV into Redis DB
+    '''
     print('Started Processing CSV')
     r = redis.Redis(host='localhost', port=6379, db=2)
 
@@ -24,6 +28,7 @@ def process_csv(tried_once = False):
     month = todays_date.strftime('%m')
     year = todays_date.strftime('%y')
     full_year = todays_date.strftime('%Y')
+
 
    
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
