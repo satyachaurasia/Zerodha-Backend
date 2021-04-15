@@ -18,3 +18,8 @@ HTTP METHOD: GET
 URL: http://localhost:8000/api/core/get-records/
 PARAMS: { date: date, q: searchQuery }
 RESPONSE: CSV FIle
+
+
+### Vue.js Client
+
+`<VueJS  Client Repo Link>` : <https://github.com/satyachaurasia/Zerodha-Frontend>
