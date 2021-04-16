@@ -3,7 +3,7 @@
 - Clone the repository
 - Install all the mentioned dependencies in requirements.txt 
 - Start the redis server on port 6379
-- Run the django server on port 8000
+- Run the django server on port 8000 and also start celery and celery beat
 
 ### API's
 
